@@ -182,7 +182,7 @@ public class RefreshListView extends ListView implements OnScrollListener {
             case PULL:
                 topPadding(topPadding);
                 //如果大于一定高度，并且滚动状态是正在滚动时，就到了松开可以刷新的状态
-                if (space > headerHeight + 30
+                if (space > headerHeight + 50
                         && scrollState == SCROLL_STATE_TOUCH_SCROLL) {
                     state = RELEASE;
                     refreshViewByState();
@@ -191,7 +191,7 @@ public class RefreshListView extends ListView implements OnScrollListener {
             case RELEASE:
                 topPadding(topPadding);
                 //在提示松开刷新时，如果你往上拖，距离小于一定高度时，提示下拉可以刷新
-                if (space < headerHeight + 30) {
+                if (space < headerHeight + 50) {
                     state = PULL;
                     refreshViewByState();
                 }
